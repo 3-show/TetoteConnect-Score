@@ -12,15 +12,11 @@ request.send();
 
 request.onload = function() {
   const userData = request.response;
-  populateHeader(userData);
+  testAlert(userData);
 }
 
-function populateHeader(obj) {
+function testAlert(obj) {
   const myH1 = document.createElement('h1');
   myH1.textContent = obj['response']['name'] + ' のマイページ';
-  header.appendChild(myH1);
-
-  const myPara = document.createElement('p');
-  myPara.textContent = 'ConnectLevel: ' + obj['response']['level'] + ' // パートナー: ' + obj['response']['lastRegularCharacter']['label'];
-  header.appendChild(myPara);
+  alert(myH1);
 }
