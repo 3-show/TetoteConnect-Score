@@ -16,7 +16,6 @@ request.onload = function() {
 }
 
 function testAlert(obj) {
-  const myH1 = document.createElement('h1');
-  myH1.textContent = obj['response']['name'] + ' のマイページ';
+  const myH1 = obj['response']['name'] + ' のマイページ';
   alert(myH1);
 }
