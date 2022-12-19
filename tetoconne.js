@@ -16,6 +16,6 @@ request.onload = function() {
 }
 
 function testAlert(obj) {
-  const myH1 = obj['response']['name'] + ' のマイページ';
+  const myH1 = obj['response']['name'] + ' のコネクトレベル：' + obj['response']['level'];
   alert(myH1);
 }
