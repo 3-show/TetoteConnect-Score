@@ -83,40 +83,42 @@ class CSV {
 }
 
 try {
-	const URL = location.href;
-	
-	if (URL != 'https://mypage2.tetoteconnect.jp/mypage-web2/?news=1') {
-		throw new Error(
-			'表示しているページが違います。マイページのトップを開いて再度試してください。'
-		);
-	}
-	
-	let requestURL = 'https://mypage2.tetoteconnect.jp/mypage-web2/api/user?data=degrees&lang=ja_jp';
-	let request = new XMLHttpRequest();
-	
-	request.open('GET', requestURL);
-	request.responseType = 'json';
-	request.send();
-	
-	request.onload = function() {
-		const userData = request.response;
-		makeCSV(userData);
-		
-		alert(
-			`テトコネスコア集計ツール\nボタンを押すとCSVのダウンロードが始まります。`
-		);
-	}
+  const URL = location.href;
+  
+  if (URL != 'https://mypage2.tetoteconnect.jp/mypage-web2/?news=1') {
+    throw new Error(
+      '表示しているページが違います。マイページのトップを開いて再度試してください。'
+    );
+  }
+  
+  let requestURL = 'https://mypage2.tetoteconnect.jp/mypage-web2/api/user?data=degrees&lang=ja_jp';
+  let request = new XMLHttpRequest();
+  
+  request.open('GET', requestURL);
+  request.responseType = 'json';
+  request.send();
+  
+  request.onload = function() {
+    const userData = request.response;
+    let results = makeCSV(userData);
+    
+    alert(
+      `テトコネスコア集計ツール\nボタンを押すとCSVのダウンロードが始まります。`
+    );
+    new CSV(results).save('tetoconne_score.csv');
+  }
 } catch (e) {
-	alert(e);
+  alert(e);
 }
 
 function makeCSV(obj) {
-	let results = [];
-	let tmpResult;
-	
-	tmpResult = {
-		title: obj['response']['level']
-	};
-	
-	results.push(tmpResult);
+  let results = [];
+  let tmpResult;
+  
+  tmpResult = {
+    title: obj['response']['level']
+  };
+  
+  results.push(tmpResult);
+  return results;
 }
