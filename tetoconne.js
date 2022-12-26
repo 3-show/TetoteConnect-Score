@@ -110,7 +110,7 @@ try {
     for (let i = 0; i <= userData['response']['stages'].length - 1; i++) {
       if (userData['response']['stages'][i]['mode'] == 1) {
         diffNum = userData['response']['stages'][i]['chartId'].substring(5, 6);
-        diff = makeDiff(diffNum);
+        diff = getDiff(diffNum);
         num[diffNum] += 1;
         
         tmpResult = {
@@ -128,15 +128,15 @@ try {
     }
     
     alert(
-      `テトコネスコア集計ツール\nStandart:${num[0]}曲, Expert:${num[1]}曲, Ultimate:${num[2]}曲, Maniac:${num[3]}曲, Connect:${num[4]}曲, \nボタンを押すとCSVのダウンロードが始まります。`
+      `テトコネスコア整理ツール\n${userData['response']['name']}さんのプレイデータをCSV形式でダウンロードします。\n\n集計対象\nStandart:${num[0]}曲, Expert:${num[1]}曲, Ultimate:${num[2]}曲, Maniac:${num[3]}曲, Connect:${num[4]}曲`
     );
-    new CSV(results).save('tetoconne_score.csv');
+    new CSV(results).save('TetoConne_score_' + getYMD() + '.csv');
   }
 } catch (e) {
   alert(e);
 }
 
-function makeDiff(chartId) {
+function getDiff(chartId) {
   let diff = chartId;
   switch (diff) {
     case "0":
@@ -156,4 +156,12 @@ function makeDiff(chartId) {
       break;
   }
   return diff;
+}
+
+function getYMD() {
+  var dt = new Date();
+  var y = dt.getFullYear();
+  var m = ("00" + (dt.getMonth()+1)).slice(-2);
+  var d = ("00" + (dt.getDate())).slice(-2);
+  return y  + m +  d;
 }
