@@ -104,12 +104,22 @@ try {
         
     let results = [];
     let tmpResult;
+    //let num = [0, 0, 0, 0, 0];
     
-    tmpResult = {
-      title: obj['response']['level']
-    };
-  
-    results.push(tmpResult);
+    for (let i = 0; i <= userData['response']['stages'].length; i++) {
+      tmpResult = {
+        title: userData['response']['stages'][i]['stage']['label'],
+        mode: userData['response']['stages'][i]['mode'],
+        difficulty: userData['response']['stages'][i]['chartId'],
+        highScore: userData['response']['stages'][i]['highScore'],
+        rank: userData['response']['stages'][i]['rankCounts'][1]['rank'],
+        playCount: userData['response']['stages'][i]['playCount'],
+        FCCount: userData['response']['stages'][i]['fullComboCount'],
+        APCount: userData['response']['stages'][i]['perfectCount']
+      };
+      
+      results.push(tmpResult);
+    }
     
     alert(
       `テトコネスコア集計ツール\nボタンを押すとCSVのダウンロードが始まります。`
