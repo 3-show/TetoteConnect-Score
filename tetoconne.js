@@ -111,12 +111,13 @@ try {
     for (let i = 0; i <= userData['response']['stages'].length - 1; i++) {
       if (userData['response']['stages'][i]['mode'] == 1) {
         diffNum = userData['response']['stages'][i]['chartId'].substring(5, 6);
+        diff = makeDiff(diffNum);
         num[diffNum] += 1;
         
         tmpResult = {
           title: userData['response']['stages'][i]['stage']['label'],
           mode: userData['response']['stages'][i]['mode'],
-          difficulty: makeDiff(diffNum),
+          difficulty: diff,
           highScore: userData['response']['stages'][i]['highScore'],
           //rank: userData['response']['stages'][i]['rankCounts'][1]['rank'],
           playCount: userData['response']['stages'][i]['playCount'],
