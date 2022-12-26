@@ -129,7 +129,7 @@ try {
     }
     
     alert(
-      `テトコネスコア集計ツール\nStandart:${num[0]}曲, Expert:${num[1]}曲, Ultimate:${num[0]}曲, Maniac:${num[0]}曲, Connect:${num[0]}曲, \nボタンを押すとCSVのダウンロードが始まります。`
+      `テトコネスコア集計ツール\nStandart:${num[0]}曲, Expert:${num[1]}曲, Ultimate:${num[2]}曲, Maniac:${num[3]}曲, Connect:${num[4]}曲, \nボタンを押すとCSVのダウンロードが始まります。`
     );
     new CSV(results).save('tetoconne_score.csv');
   }
