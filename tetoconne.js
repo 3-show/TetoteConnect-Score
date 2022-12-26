@@ -100,15 +100,7 @@ try {
   
   request.onload = function() {
     const userData = request.response;
-    
-    let results = [];
-    let tmpResult;
-    
-    tmpResult = {
-      title: obj['response']['level']
-    };
-    
-    results.push(tmpResult);
+    let results = makeCSV(userData);
     
     alert(
       `テトコネスコア集計ツール\nボタンを押すとCSVのダウンロードが始まります。`
