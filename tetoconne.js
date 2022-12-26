@@ -106,16 +106,16 @@ try {
     let tmpResult;
     //let num = [0, 0, 0, 0, 0];
     
-    for (let i = 0; i <= 60; i++) {
+    for (let i = 0; i <= 1; i++) {
       tmpResult = {
-        title: userData['response']['stages'][i]['stage']['label'],
-        mode: userData['response']['stages'][i]['mode'],
-        difficulty: userData['response']['stages'][i]['chartId'],
-        highScore: userData['response']['stages'][i]['highScore'],
-        rank: userData['response']['stages'][i]['rankCounts'][1]['rank'],
-        playCount: userData['response']['stages'][i]['playCount'],
-        FCCount: userData['response']['stages'][i]['fullComboCount'],
-        APCount: userData['response']['stages'][i]['perfectCount']
+        title: userData['response']['stages'][0]['stage']['label'],
+        mode: userData['response']['stages'][0]['mode'],
+        difficulty: userData['response']['stages'][0]['chartId'],
+        highScore: userData['response']['stages'][0]['highScore'],
+        rank: userData['response']['stages'][0]['rankCounts'][1]['rank'],
+        playCount: userData['response']['stages'][0]['playCount'],
+        FCCount: userData['response']['stages'][0]['fullComboCount'],
+        APCount: userData['response']['stages'][0]['perfectCount']
       };
       
       results.push(tmpResult);
