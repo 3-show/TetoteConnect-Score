@@ -100,9 +100,8 @@ try {
   
   request.onload = function() {
     const userData = request.response;
-    let results = makeCSV(userData);
         
-    //let results = [];
+    let results = [];
     let tmpResult;
     let num = [0, 0, 0, 0, 0];
     let diffNum = -1;
@@ -116,7 +115,7 @@ try {
         
         tmpResult = {
           title: userData['response']['stages'][i]['stage']['label'],
-          mode: userData['response']['stages'][i]['mode'],
+          //mode: userData['response']['stages'][i]['mode'],
           difficulty: diff,
           highScore: userData['response']['stages'][i]['highScore'],
           //rank: userData['response']['stages'][i]['rankCounts'][1]['rank'],
@@ -157,16 +156,4 @@ function makeDiff(chartId) {
       break;
   }
   return diff;
-}
-
-function makeCSV(obj) {
-  let results = [];
-  let tmpResult;
-  
-  tmpResult = {
-    title: obj['response']['level']
-  };
-  
-  results.push(tmpResult);
-  return results;
 }
