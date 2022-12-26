@@ -112,7 +112,7 @@ try {
         mode: userData['response']['stages'][i]['mode'],
         difficulty: userData['response']['stages'][i]['chartId'],
         highScore: userData['response']['stages'][i]['highScore'],
-        rank: userData['response']['stages'][i]['rankCounts'][1]['rank'],
+        //rank: userData['response']['stages'][i]['rankCounts'][1]['rank'],
         playCount: userData['response']['stages'][i]['playCount'],
         FCCount: userData['response']['stages'][i]['fullComboCount'],
         APCount: userData['response']['stages'][i]['perfectCount']
