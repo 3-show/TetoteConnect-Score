@@ -106,7 +106,7 @@ try {
     let tmpResult;
     //let num = [0, 0, 0, 0, 0];
     
-    for (let i = 0; i <= Object.keys(userData['response']['stages'].length); i++) {
+    for (let i = 0; i <= 60; i++) {
       tmpResult = {
         title: userData['response']['stages'][i]['stage']['label'],
         mode: userData['response']['stages'][i]['mode'],
