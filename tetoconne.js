@@ -106,7 +106,8 @@ try {
     let tmpResult;
     //let num = [0, 0, 0, 0, 0];
     
-    for (let i = 0; i <= userData['response']['stages'].length; i++) {
+    for (let i = 0; i <= userData['response']['stages'].length - 1; i++) {
+      
       tmpResult = {
         title: userData['response']['stages'][i]['stage']['label'],
         mode: userData['response']['stages'][i]['mode'],
