@@ -111,7 +111,7 @@ try {
       tmpResult = {
         title: userData['response']['stages'][i]['stage']['label'],
         mode: userData['response']['stages'][i]['mode'],
-        difficulty: userData['response']['stages'][i]['chartId'],
+        difficulty: userData['response']['stages'][i]['chartId'].substring(5, 6),
         highScore: userData['response']['stages'][i]['highScore'],
         //rank: userData['response']['stages'][i]['rankCounts'][1]['rank'],
         playCount: userData['response']['stages'][i]['playCount'],
