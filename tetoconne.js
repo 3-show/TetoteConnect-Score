@@ -102,7 +102,7 @@ try {
     const userData = request.response;
     let results = makeCSV(userData);
         
-    let results = [];
+    //let results = [];
     let tmpResult;
     let num = [0, 0, 0, 0, 0];
     let diffNum = -1;
