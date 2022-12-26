@@ -100,35 +100,62 @@ try {
   
   request.onload = function() {
     const userData = request.response;
-    //let results = makeCSV(userData);
+    let results = makeCSV(userData);
         
     let results = [];
     let tmpResult;
-    //let num = [0, 0, 0, 0, 0];
+    let num = [0, 0, 0, 0, 0];
+    let diffNum = -1;
+    let diff = "";
     
     for (let i = 0; i <= userData['response']['stages'].length - 1; i++) {
-      
-      tmpResult = {
-        title: userData['response']['stages'][i]['stage']['label'],
-        mode: userData['response']['stages'][i]['mode'],
-        difficulty: userData['response']['stages'][i]['chartId'].substring(5, 6),
-        highScore: userData['response']['stages'][i]['highScore'],
-        //rank: userData['response']['stages'][i]['rankCounts'][1]['rank'],
-        playCount: userData['response']['stages'][i]['playCount'],
-        FCCount: userData['response']['stages'][i]['fullComboCount'],
-        APCount: userData['response']['stages'][i]['perfectCount']
-      };
-      
-      results.push(tmpResult);
+      if (userData['response']['stages'][i]['mode'] == 1) {
+        diffNum = userData['response']['stages'][i]['chartId'].substring(5, 6);
+        num[diffNum] += 1;
+        
+        tmpResult = {
+          title: userData['response']['stages'][i]['stage']['label'],
+          mode: userData['response']['stages'][i]['mode'],
+          difficulty: makeDiff(diffNum),
+          highScore: userData['response']['stages'][i]['highScore'],
+          //rank: userData['response']['stages'][i]['rankCounts'][1]['rank'],
+          playCount: userData['response']['stages'][i]['playCount'],
+          FCCount: userData['response']['stages'][i]['fullComboCount'],
+          APCount: userData['response']['stages'][i]['perfectCount']
+        };
+        results.push(tmpResult);
+      }
     }
     
     alert(
-      `テトコネスコア集計ツール\nボタンを押すとCSVのダウンロードが始まります。`
+      `テトコネスコア集計ツール\nStandart:${num[0]}曲, Expert:${num[1]}曲, Ultimate:${num[0]}曲, Maniac:${num[0]}曲, Connect:${num[0]}曲, \nボタンを押すとCSVのダウンロードが始まります。`
     );
     new CSV(results).save('tetoconne_score.csv');
   }
 } catch (e) {
   alert(e);
+}
+
+function makeDiff(chartId) {
+  let diff = chartId;
+  switch (diff) {
+    case "0":
+      diff = "Standard";
+      break;
+    case "1":
+      diff = "Expert";
+      break;
+    case "2":
+      diff = "Ultimate";
+      break;
+    case "3":
+      diff = "Maniac";
+      break;
+    case "4":
+      diff = "Connect";
+      break;
+  }
+  return diff;
 }
 
 function makeCSV(obj) {
