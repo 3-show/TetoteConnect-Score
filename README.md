@@ -2,9 +2,9 @@
 
 ## せつめい
 
-リズムはじける×ミライな音ゲー！タイトーのリズムアクションゲーム『[テトテコネクト](https://tetoteconnect.jp/)』のスコア管理Bookmarkletです！
+リズムはじける×ミライな音ゲー！タイトーのリズムアクションゲーム『[テトテコネクト](https://tetoteconnect.jp/)』のスコア集計Bookmarkletです！
 
-[マイページ](https://mypage2.tetoteconnect.jp/)からあなたがプレイした楽曲のスコアを取得して、CSVファイルとして出力します♪
+[マイページ](https://mypage2.tetoteconnect.jp/)からあなたがプレイした楽曲のスコアを取得！CSVファイルとして出力します♪
 
 ## どうつかうの？
 
@@ -16,7 +16,7 @@ javascript:(function(url){s=document.createElement('script');s.src=url;document.
 
 2. [テトコネマイページ](https://mypage2.tetoteconnect.jp/)にログイン！
 
-3. ログイン後のページを開いた状態で、登録したブックマークを実行！データがダウンロードされます♪
+3. ログイン後のページで登録したブックマークを実行！データがダウンロードされます♪
 
 ## さいごに
 
