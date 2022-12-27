@@ -4,7 +4,7 @@
 
 リズムはじける×ミライな音ゲー！タイトーのリズムアクションゲーム『[テトテコネクト](https://tetoteconnect.jp/)』のスコア管理Bookmarkletです！
 
-[マイページ](https://mypage2.tetoteconnect.jp/)からあなたがプレイ済みの楽曲のスコアを取得し、CSVファイルとして出力します♪
+[マイページ](https://mypage2.tetoteconnect.jp/)からあなたがプレイした楽曲のスコアを取得して、CSVファイルとして出力します♪
 
 ## どうつかうの？
 
