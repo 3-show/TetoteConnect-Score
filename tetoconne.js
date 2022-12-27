@@ -87,7 +87,7 @@ try {
   
   if (URL != 'https://mypage2.tetoteconnect.jp/mypage-web2/?news=1') {
     throw new Error(
-      '表示しているページが違います。マイページのトップを開いて再度試してください。'
+      '表示しているページが違うよ！マイページを開いてもういちど試してね'
     );
   }
   
@@ -128,7 +128,7 @@ try {
     }
     
     alert(
-      `テトコネスコア整理ツール\n${userData['response']['name']}さんのプレイデータをCSV形式でダウンロードします。\n\n集計対象\nStandart:${num[0]}曲, Expert:${num[1]}曲, Ultimate:${num[2]}曲, Maniac:${num[3]}曲, Connect:${num[4]}曲`
+      `テトコネスコア管理ツール♪\n${userData['response']['name']}さんのプレイデータをCSV形式でダウンロードするよ！\n\n↓集計対象はコチラ↓\nStandart:${num[0]}曲, Expert:${num[1]}曲, Ultimate:${num[2]}曲, Maniac:${num[3]}曲, Connect:${num[4]}曲`
     );
     new CSV(results).save('TetoConne_score_' + getYMD() + '.csv');
   }
