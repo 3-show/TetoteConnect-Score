@@ -128,7 +128,7 @@ try {
     }
     
     alert(
-      `テトコネスコア管理ツール♪\n${userData['response']['name']}さんのプレイデータをCSV形式でダウンロードするよ！\n\n↓集計対象はコチラ↓\nStandart:${num[0]}曲, Expert:${num[1]}曲, Ultimate:${num[2]}曲, Maniac:${num[3]}曲, Connect:${num[4]}曲`
+      `テトコネスコア管理ツール♪\n${userData['response']['name']}さんのプレイデータをCSV形式でダウンロードするよ！\n\n↓集計対象はコチラ↓\nStandard:${num[0]}曲, Expert:${num[1]}曲, Ultimate:${num[2]}曲, Maniac:${num[3]}曲, Connect:${num[4]}曲`
     );
     new CSV(results).save('TetoConne_score_' + getYMD() + '.csv');
   }
